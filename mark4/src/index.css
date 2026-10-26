@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'stark';
-    src: url("/Stark.otf");
+    src: url("./assets/fonts/Stark.otf") format("opentype");
 }
 
 html{
@@ -26,6 +26,7 @@ html{
     padding: 20px;
     border-right: solid 1px white;
 }
+
 
 .header-part{
     display: flex;
@@ -90,6 +91,10 @@ html{
     padding: 12px 0;
     letter-spacing: 3px;
     transition: 0.3s ease;
+}
+
+.sidebar nav a.nav-gap{
+    margin-top: 40px;
 }
 
 .sidebar nav a:hover{

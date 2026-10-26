@@ -1,13 +1,16 @@
 import {useState} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faBars, faHouse, faCircleInfo, faFolder, faCode} from '@fortawesome/free-solid-svg-icons';
+import {faXmark, faBars, faHouse, faCircleInfo, faFolder, faCode} from '@fortawesome/free-solid-svg-icons';
 
 
 const links = [
-    {href: '#home', label: 'Home', icon: FaHouse},
-    {href: '#about', label: 'About me', icon: FaCircleInfo},
-    {href: '#projects', label: 'Projects', icon: FaFolder},
-    {href: '#skills', label: 'Skills', icon: FaCode}
+    {href: '#home', label: 'Home', icon: faHouse},
+    {href: '#about', label: 'About me', icon: faCircleInfo},
+    {href: '#projects', label: 'Projects', icon: faFolder},
+    {href: '#skills', label: 'Skills', icon: faCode},
+
+    
+   
 
 ]
 function Sidebar(){
@@ -28,22 +31,22 @@ function Sidebar(){
                         onClick={() => setOpen(!menuOpen)}
                     >
 
-                        if (menuOpen){
-                            <FontAwesomeIcon icon={faBars} />
-                        }
+                       
+                            {menuOpen ? <FontAwesomeIcon icon={faXmark} /> : <FontAwesomeIcon icon={faBars} />}
+                        
                     </button>
                 </div>
 
                 <nav>
-                    {links.map((link) => (
-                        <a key={link.href} href={link.href} onClick={() => setOpen(false)}>
+                    {links.map((link, index) => (
+                        <a key={link.href} href={link.href} className={link.space ? 'nav-gap' : ''} onClick={() => setOpen(false)}>
                             <FontAwesomeIcon icon={link.icon}/> {link.label}
                         </a>
                     ))}
                 </nav>
             </aside>
         </>
-    );
+    )
 }
 
 export default Sidebar;
