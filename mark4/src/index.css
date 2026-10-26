@@ -1,0 +1,419 @@
+@font-face {
+    font-family: 'stark';
+    src: url("/Stark.otf");
+}
+
+html{
+    scroll-behavior: smooth;
+    scroll-snap-type: y proximity;
+}
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'stark';
+}
+
+.sidebar{
+    width: 220px;
+    background-color: #1B1C1F;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    position: fixed;
+    padding: 20px;
+    border-right: solid 1px white;
+}
+
+.header-part{
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo{
+    padding: 8px;
+    font-size: 30px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.logo a{
+    text-decoration: none;
+    color: #B8860B;
+    transition: 0.3s ease;
+
+}
+
+.logo a:hover{
+    text-decoration: none;
+    color: #FFC107;
+
+}
+
+.menu{
+    padding: 8px;
+    display: none;
+    background: none;
+    font-size: 20px;
+    border:none;
+    cursor: pointer;
+    color: #babdc5;
+    transition: 0.3s ease;
+}
+
+.menu:hover{
+    color: white;
+}
+.sidebar nav{
+     display: flex;
+    flex-direction: column;
+    padding: 10px;
+    flex: 1;
+    height: 30vh;
+    min-height: 0;
+    overflow-y: auto;
+    color-scheme: dark;
+    scroll-behavior: smooth;
+    scrollbar-color: rgb(48, 47, 47);
+}
+
+
+
+.sidebar nav a{
+    text-decoration: none;
+    color: black;
+    font-weight: 300;
+    font-size: 18px;
+    color: #cfd1d4;
+    padding: 12px 0;
+    letter-spacing: 3px;
+    transition: 0.3s ease;
+}
+
+.sidebar nav a:hover{
+    color: white;
+    
+}
+
+.home{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    height: 100vh;
+    margin-left: 220px;
+    background-color: #2B2D31;
+}
+
+
+.justin{
+    font-size: clamp(40px, 6vw, 90px);
+    margin-left: 20px;
+    font-style: italic;
+    color: #B8860B;
+    transition: 0.3s ease;
+}
+
+.justin:hover{
+    color: #FFC107;
+   
+}
+
+.descrip{
+    font-size: clamp(18px, 2.2vw, 30px);
+    margin-left: 20px;
+}
+
+.home img{
+    max-width: 40%;;
+    height: auto;
+}
+
+.about{
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+   
+    margin-left: 220px;
+    background-color: #2B2D31;
+}
+
+
+.about-me{
+    width: 100%;
+    max-width: 100%;
+}
+
+.about-top{
+    display: flex;
+    align-items: center;
+    gap: 48px;
+}
+
+.click-here{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 20px;
+}
+
+.click-here a{
+    text-decoration: none;
+    background-color: #E53935;
+    padding: 10px;
+    font-size: clamp(18px, 2.2vw, 30px);
+    color: #FFC107;
+    border: 4px solid #40C4FF;
+    border-radius: 8px;
+}
+
+
+
+.picture{
+    width: 40%;
+    max-width: 320px;
+    height: auto;
+}
+
+.about-text h1{
+    font-size: clamp(32px, 4vw, 56px);
+    color: #B8860B;
+    margin-bottom: 20px;
+}
+
+.about-text p{
+    font-size: clamp(16px, 1.5vw, 20px);
+    color:#cfd1d4;;
+    line-height: 2;
+}
+.short-info{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 32px;
+    border-top: 1px solid #3a3c41;
+}
+
+.info{
+    display: flex;
+    border-left: 1px solid #3a3c41;   
+    flex-direction: column;
+    gap: 8px;
+    padding: 17px 16px;
+}
+
+.info strong{
+     font-size: clamp(18px, 2vw, 26px);
+    color: #B8860B;
+}
+
+.info span{
+    font-size: 13px;
+    letter-spacing: 2px;
+    color: #babdc5;
+}
+
+.projects{
+    height: 100vh;
+    padding: 10px;
+    margin-left: 220px;
+    background-color: #2B2D31;
+}
+
+.skills{
+    height: 100vh;
+    padding: 10px;
+    margin-left: 220px;
+    background-color: #2B2D31;
+}
+
+
+
+
+@media (max-width: 768px) {
+    .sidebar{
+        width: 100%;
+        height: 90px;
+        overflow: hidden;
+        transition: height 0.3s ease;
+        z-index: 100;
+    }
+
+    .sidebar nav{
+        display: none;
+        flex: none;
+        height: auto;
+        overflow-y: visible;
+        background-color: #1B1C1F;
+    }
+
+    .sidebar nav::-webkit-scrollbar{
+        display: none;
+    }
+
+    .sidebar nav a{
+        padding: 12px 0; 
+    }
+
+    .sidebar.open{
+       height: 100vh;
+       height: 100dvh;
+       overflow-y: auto;
+    }
+
+    .sidebar.open nav{
+        display: flex;
+    }
+
+    .menu{
+        display: flex;
+        margin: 5px;
+    }
+
+    .home, .about, .projects, .skills{
+        margin-left: 0;
+        padding-top: 10px;
+        scroll-margin-top: 90px;
+        scroll-snap-align: start;       
+    }
+
+    body{
+        margin-top: 90px;
+    }
+
+    .home{
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        gap: 1.5rem;
+        padding: 20px;
+        height: auto;
+        min-height: 100vh;
+    }
+    .justin,
+    .descrip,
+    .home img{
+        width: 100%;
+        max-width: 300px;
+        margin-left: 0;
+    }
+
+
+    .about{
+        height: auto;
+        padding: 30px 20px;
+    }
+
+    .about-top{
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .picture{
+        width: 70%;
+        max-width: 150px;
+        border-radius: 50%;
+        border: 8px solid #B8860B;
+    }
+}
+
+
+/*  LARGER SCREENS */
+
+
+@media (min-width: 1400px){
+
+    /* Sidebar */
+    .sidebar{
+        width: 260px;
+        padding: 28px;
+    }
+
+    .logo{
+        font-size: 36px;
+    }
+
+    .sidebar nav{
+        height: 40vh;
+    }
+
+    .sidebar nav a{
+        font-size: 21px;
+        padding: 14px 0;
+    }
+
+    /* Sections move over by the new sidebar width */
+    .home, .about, .projects, .skills{
+        margin-left: 260px;
+    }
+
+    /* Home */
+    .home{
+        padding-left: 6vw;
+        padding-right: 6vw;
+    }
+
+    .justin{
+        font-size: 110px;
+    }
+
+    .descrip{
+        font-size: 36px;
+    }
+
+    .home img{
+        width: 480px;
+        max-width: 40%;
+    }
+}
+
+/* Ultrawide and 4K */
+@media (min-width: 2000px){
+
+    /* Sidebar */
+    .sidebar{
+        width: 340px;
+        padding: 36px;
+    }
+
+    .logo{
+        font-size: 48px;
+    }
+
+    .sidebar nav{
+        height: 45vh;
+    }
+
+    .sidebar nav a{
+        font-size: 28px;
+        padding: 18px 0;
+        letter-spacing: 3px;
+    }
+
+    /* Sections */
+    .home, .about, .projects, .skills{
+        margin-left: 340px;
+    }
+
+    /* Home */
+    .home{
+        padding-left: 12vw;
+        padding-right: 12vw;
+    }
+
+    .justin{
+        font-size: 150px;
+    }
+
+    .descrip{
+        font-size: 48px;
+    }
+
+    .home img{
+        width: 640px;
+    }
+}
+
+
